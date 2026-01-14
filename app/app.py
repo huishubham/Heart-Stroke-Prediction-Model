@@ -55,7 +55,16 @@ if st.button("Predict"):
 
     prediction = model.predict(input_df)[0]
 
-    if prediction == 1:
-        st.error("High risk of Heart Stroke")
-    else:
-        st.success("Low risk of Heart Stroke")
+if prediction == 1:
+    st.error("⚠️ High risk of Heart Disease")
+
+    st.markdown("### What you can do now:")
+    st.write("• Avoid fried and salty foods, quit smoking if you do, and start light daily exercise after consulting a doctor.")
+    st.write("• Check your blood pressure, sugar, and cholesterol regularly and see a heart specialist soon.")
+
+else:
+    st.success("✅ Low risk of Heart Disease")
+
+    st.markdown("### How to stay healthy:")
+    st.write("• Keep your heart healthy by walking at least 30 minutes daily and eating less oily food.")
+    st.write("• Limit sugar and salt in meals and get your blood pressure checked once a year.")
