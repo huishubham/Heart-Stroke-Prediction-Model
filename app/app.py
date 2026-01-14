@@ -8,9 +8,9 @@ import pandas as pd
 import joblib 
 
 # Deserializing the pickle files
-model = joblib.load('LogisticRegression_Heart.pkl')
-scaler = joblib.load('Scaler.pkl')
-expected_columns = joblib.load('Columns.pkl')
+model = joblib.load(os.path.join(BASE_DIR, "../pickle/LogisticRegression_Heart.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "../pickle/Scaler.pkl"))
+expected_columns = joblib.load(os.path.join(BASE_DIR, "../pickle/Columns.pkl"))
 
 st.title("Heart Stroke Prediction")
 st.markdown("Enter the following details")
@@ -68,3 +68,4 @@ else:
     st.markdown("### How to stay healthy:")
     st.write("• Keep your heart healthy by walking at least 30 minutes daily and eating less oily food.")
     st.write("• Limit sugar and salt in meals and get your blood pressure checked once a year.")
+
